@@ -1,14 +1,26 @@
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <button id="gridSizeButton">Change Grid Size</button>
-    <button id="eraserButton">Eraser</button>
-    <button id="clean">Clean</button>
-    <button id="colorMode"><input type="color" value="#ff0000" /></button>
-    <div id="container"></div>
 
-    <script src="app.js"></script>
-  </body>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+
+  <h1>Etch-A-Sketch</h1>
+  <div class="main-container">
+    <div class="tools">
+      <div>
+        <p>Value: <output id="gridSizeRangeValue">16 x 16</output></p>
+        <input type="range" id="gridSizerange" min="0" max="32" step="1">
+      </div>
+
+      <button id="eraserButton">Eraser</button>
+      <button id="cleanButton">Clean</button>
+      <input id="getColor" type="color" />
+      <div id="container"></div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>

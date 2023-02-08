@@ -1,65 +1,55 @@
 const container = document.getElementById("container");
-const gridSizeButton = document.getElementById("gridSizeButton");
+const gridSizerange = document.getElementById("gridSizerange");
 const eraserButton = document.getElementById("eraserButton");
+const getColor = document.getElementById("getColor")
+const cleanButton = document.getElementById("cleanButton")
 
-let pickedColor = "black"
+const gridSizeRangeValue = document.getElementById("gridSizeRangeValue")
+
+let defaultColor = "black"
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
-      const row = document.createElement("div");
+    const row = document.createElement("div");
 
-      row.className = "row";
-      
-      for (let j = 0; j < size; j++) {
-        const cell = document.createElement("div");
-        cell.className = "cell"
-        cell.addEventListener("mouseenter", function() {
-          cell.style.backgroundColor = pickedColor;
-        
-        })
-        row.appendChild(cell)
-      }
-      container.appendChild(row);  
-    };
-      
+    row.className = "row";
+
+    for (let j = 0; j < size; j++) {
+      const cell = document.createElement("div");
+      cell.className = "cell"
+      cell.addEventListener("mouseenter", function () {
+        cell.style.backgroundColor = defaultColor;
+      })
+      row.appendChild(cell)
     }
+    container.appendChild(row);
+  };
+
+}
+
+
+
+eraserButton.addEventListener("click", function () {
+  defaultColor = "white";
+})
+
+
+getColor.addEventListener("input", function () {
+  defaultColor = getColor.value
+})
+
+cleanButton.addEventListener("click", function () {
+  const cleanCell = document.getElementsByClassName("cell");
+  for (i = 0; i < cleanCell.length; i++)
+    cleanCell[i].style.backgroundColor = "white"
+})
+
+gridSizerange.addEventListener("input", function () {
+  container.innerHTML = "";
+  gridSizeRangeValue.textContent = `${gridSizerange.value} x ${gridSizerange.value}`
+  createGrid(gridSizerange.value);
+
+})
 
 
 createGrid(16);
-
-eraser.addEventListener("click", function(){
-  pickedColor = "white";
-})
-
-
-eraser.addEventListener("click", function(){
-  pickedColor = "white";
-})
-
-
-gridSizeButton.addEventListener("click", function() {
-  container.innerHTML = "";
-  const size = prompt("Enter number of squares per side (max 100)");
-  if (size > 100) {
-    alert("Size cannot be greater than 100");
-    return;
-  }
-  createGrid(size);
-});
-
-
-function createColorPalette(value) {
-  var v = 255/value;
-  for( var rStep = 0, r = 0; rStep < v; rStep++) {    
-      for( var gStep = 0, g = 0; gStep < v; gStep++ ) {       
-          for( var bStep = 0, b = 0; bStep < v; bStep++ ) {                                                  
-              createDiv(r,g,b);
-              b += value;
-          }
-          g += value;
-      }
-      r += value;
-  }
-  createBr();
-}
-createColorPalette()
