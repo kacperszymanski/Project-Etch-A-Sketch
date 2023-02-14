@@ -2,27 +2,49 @@ h1 {
   text-align: center;
 }
 
+body {
+  background-color: #D9CB84;
+}
+
 .main-container {
-  display: flex;
+  display: block;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  gap: 15px;
+
+
 }
 
-#container {
-  width: 960px;
-  height: 960px;
-  margin: 0 auto;
+
+#grid {
+  display: grid;
+  width: 500px;
+  height: 500px;
+
 }
-
-
-.row {
-  display: flex
-}
-
 
 .cell {
+  box-sizing: border-box;
 
-  float: left;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
-  background-color: white;
+  border: none;
+  border-radius: 100%;
+  background-color: #05AFF2;
+
 }
+
+/* Color Theme Swatches in Hex
+.puff-mural-1-hex { color: #A60321; }
+.puff-mural-2-hex { color: #0597F2; }
+.puff-mural-3-hex { color: #05AFF2; }
+.puff-mural-4-hex { color: #D9CB84; }
+.puff-mural-5-hex { color: #D98566; }
+
+/* Color Theme Swatches in RGBA
+.puff-mural-1-rgba { color: rgba(165, 3, 33, 1); }
+.puff-mural-2-rgba { color: rgba(4, 151, 242, 1); }
+.puff-mural-3-rgba { color: rgba(4, 174, 242, 1); }
+.puff-mural-4-rgba { color: rgba(216, 202, 132, 1); }
+.puff-mural-5-rgba { color: rgba(216, 132, 101, 1); } */
+
+/* 

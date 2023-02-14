@@ -1,38 +1,34 @@
-const container = document.getElementById("container");
+const grid = document.getElementById("grid");
+const cell = document.getElementById("cell");
 const gridSizerange = document.getElementById("gridSizerange");
 const eraserButton = document.getElementById("eraserButton");
 const getColor = document.getElementById("getColor")
 const cleanButton = document.getElementById("cleanButton")
-
 const gridSizeRangeValue = document.getElementById("gridSizeRangeValue")
 
 let defaultColor = "black"
 
+
 function createGrid(size) {
-  for (let i = 0; i < size; i++) {
-    const row = document.createElement("div");
+  grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+  grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-    row.className = "row";
+  for (let i = 0; i < size * size; i++) {
+    const cell = document.createElement("div");
+    cell.className = "cell"
+    cell.addEventListener("mousemove", function () {
+      cell.style.backgroundColor = defaultColor;
+    })
 
-    for (let j = 0; j < size; j++) {
-      const cell = document.createElement("div");
-      cell.className = "cell"
-      cell.addEventListener("mouseenter", function () {
-        cell.style.backgroundColor = defaultColor;
-      })
-      row.appendChild(cell)
-    }
-    container.appendChild(row);
-  };
+    grid.appendChild(cell)
+  }
 
-}
-
+};
 
 
 eraserButton.addEventListener("click", function () {
   defaultColor = "white";
 })
-
 
 getColor.addEventListener("input", function () {
   defaultColor = getColor.value
@@ -45,11 +41,15 @@ cleanButton.addEventListener("click", function () {
 })
 
 gridSizerange.addEventListener("input", function () {
-  container.innerHTML = "";
+  grid.innerHTML = "";
   gridSizeRangeValue.textContent = `${gridSizerange.value} x ${gridSizerange.value}`
   createGrid(gridSizerange.value);
+
 
 })
 
 
-createGrid(16);
+window.onload = () => {
+  createGrid(16)
+
+}

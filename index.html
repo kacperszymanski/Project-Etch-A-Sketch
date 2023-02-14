@@ -1,6 +1,7 @@
 <html>
 
 <head>
+  <script src="app.js" defer></script>
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
@@ -10,17 +11,18 @@
   <div class="main-container">
     <div class="tools">
       <div>
-        <p>Value: <output id="gridSizeRangeValue">16 x 16</output></p>
+        <p>Grid Size: <output id="gridSizeRangeValue">16 x 16</output></p>
         <input type="range" id="gridSizerange" min="0" max="32" step="1">
       </div>
 
       <button id="eraserButton">Eraser</button>
       <button id="cleanButton">Clean</button>
       <input id="getColor" type="color" />
-      <div id="container"></div>
+
     </div>
+    <div id="grid"></div>
   </div>
-  <script src="app.js"></script>
+
 </body>
 
 </html>
