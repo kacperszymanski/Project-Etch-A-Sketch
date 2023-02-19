@@ -1,28 +1,24 @@
 <html>
+  <head>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<head>
-  <script src="app.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
+  <body>
+    <h1>Etch-A-Sketch</h1>
+    <div class="main-container">
+      <div class="tools">
+        <div>
+          <p>Grid Size: <output id="gridSizeRangeValue">16 x 16</output></p>
+          <input type="range" id="gridSizeRange" min="0" max="32" step="1" />
+        </div>
 
-<body>
-
-  <h1>Etch-A-Sketch</h1>
-  <div class="main-container">
-    <div class="tools">
-      <div>
-        <p>Grid Size: <output id="gridSizeRangeValue">16 x 16</output></p>
-        <input type="range" id="gridSizerange" min="0" max="32" step="1">
+        <button id="eraserButton">Eraser</button>
+        <button id="cleanButton">Clean</button>
+        <input id="getColor" type="color" />
+        <input id="colorButton" type="color" />
       </div>
-
-      <button id="eraserButton">Eraser</button>
-      <button id="cleanButton">Clean</button>
-      <input id="getColor" type="color" />
-
+      <div id="grid"></div>
     </div>
-    <div id="grid"></div>
-  </div>
-
-</body>
-
+  </body>
 </html>
