@@ -6,16 +6,19 @@
 </head>
 
 <body>
-  <h1>Etch-A-Sketch</h1>
+  <div id="cubed">
+    <h1 id="cubed">Etch-A-Sketch</h1>
+  </div>
   <div class="main-container">
     <div class="tools">
       <div>
-        <p>Grid Size: <output id="gridSizeRangeValue"></output></p>
+        <p><output id="gridSizeRangeValue"></output></p>
         <input type="range" id="gridSizeRangeSlider" min="0" max="32" step="1" />
       </div>
       <input id="getColor" type="color" />
-      <button id="eraserButton">Eraser</button>
-      <button id="cleanButton">Clean</button>
+      <button class="tools-btn" id="colorButton">Color</button>
+      <button class="tools-btn" id="eraserButton">Eraser</button>
+      <button class="tools-btn" id="cleanButton">Clean</button>
 
     </div>
     <div id="grid"></div>

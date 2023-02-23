@@ -1,5 +1,5 @@
 const DEFAULT_COLOR = 'black'
-const DEFAULT_SIZE = 17
+const DEFAULT_SIZE = 16
 const DEFAULT_MODE = 'color'
 
 let currentColor = DEFAULT_COLOR
@@ -25,6 +25,7 @@ const cell = document.getElementById("cell");
 const gridSizeRange = document.getElementById("gridSizeRange");
 const eraserButton = document.getElementById("eraserButton");
 const getColor = document.getElementById("getColor")
+const colorButton = document.getElementById("colorButton")
 const cleanButton = document.getElementById("cleanButton")
 const gridSizeRangeValue = document.getElementById("gridSizeRangeValue")
 
@@ -33,6 +34,7 @@ getColor.oninput = (e) => setCurrentColor(e.target.value)
 
 eraserButton.onclick = () => setCurrentMode('eraser')
 cleanButton.onclick = () => cleanGrid()
+colorButton.onclick = () => setCurrentMode('color')
 gridSizeRangeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
 gridSizeRangeSlider.onchange = (e) => changeSize(e.target.value)
 

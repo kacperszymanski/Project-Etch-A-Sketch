@@ -1,9 +1,16 @@
 h1 {
   text-align: center;
+  color: white;
+  font-size: 70px;
+  font-weight: 600;
+  text-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 30%);
+  -webkit-text-stroke: 2px black;
+
 }
 
 body {
-  background-color: #BFBFBF;
+  background-color: cyan;
+  font-family: Comic Sans MS, sans-serif;
 }
 
 .main-container {
@@ -12,15 +19,14 @@ body {
   text-align: center;
   justify-content: center;
   gap: 15px;
-
-
 }
 
 .tools {
-  display: block;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 15px;
 }
 
 
@@ -37,25 +43,86 @@ body {
 
 #getColor::-webkit-color-swatch {
   border-radius: 50%;
-  border: 4px solid #000000;
+  box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 30%);
 }
 
 #getColor::-moz-color-swatch {
   border-radius: 50%;
-  border: 4px solid #000000;
+  box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 30%);
 }
 
 #grid {
   display: grid;
   width: 500px;
   height: 500px;
-
+  border: 1px solid #eaeaea;
+  box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 20%);
 }
 
 .cell {
   box-sizing: border-box;
-
   border: none;
   background-color: white;
+}
 
+#gridSizeRangeSlider {
+  appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #f8f9fa;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+#gridSizeRangeSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #10403B;
+  cursor: pointer;
+}
+
+#gridSizeRangeSlider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #10403B;
+  cursor: pointer;
+}
+
+.tools-btn {
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 5px;
+  color: #3c4043;
+  cursor: pointer;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  box-shadow: 0 0.5rem 1.2rem rgb(0 0 0 / 30%);
+  font-family: Comic Sans MS, sans-serif;
+  font-weight: 900;
+
+}
+
+.tools-btn:hover {
+  box-shadow: 0 0.5rem 1.2rem rgba(255, 255, 255, 0.3);
+
+}
+
+.tools-btn:focus {
+  box-shadow: 0 0.5rem 1.2rem rgba(94, 6, 235, 0.3);
+  outline: none;
 }
